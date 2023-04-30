@@ -10,7 +10,6 @@
   font-size: 14px;
 }
 
-/* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -27,7 +26,6 @@ input:focus {
   box-shadow: 0 0 10px orange;
 }
 
-/* Set a style for all buttons */
 .loginbtn {
   color: white;
   font-size: 18px;
@@ -38,35 +36,30 @@ input:focus {
   left: 50%;
   transform: translateX(-50%);
   margin: 10px auto;
-  text-align: center; /* This will center the button text */
+  text-align: center;
   
   background: #7FC805;
   border-radius: 16px;
   border: none;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
 }
 
-/* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 0 0;
 }
 
-/* Avatar image */
 img.avatar {
   width: 25%;
 }
 
-/* Add padding to containers */
 .container {
   padding: 15px;
 }
 
-/* The "Forgot password" text */
 span.psw {
   font-size: 13px;
   display: block;
@@ -74,7 +67,6 @@ span.psw {
   padding-top: 0px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 600px) {
   img.avatar {
     width: 60%;
