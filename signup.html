@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>BinGo Sign-Up</title>
+  <style>
+    /* Import the Poppins font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  
+    /* Set the default font family for the HTML element to Poppins */
+    html {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  
+</head>
+<body style="background-color:#D9EBB4;"> 
+  <form action="action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="images/LOGO.svg" alt="Avatar" class="avatar">
+    </div>
+
+    <p class="introWelcome">Welcome!</p>
+    <p class="intro">Please enter your details below</p>
+  
+    <div class="container">
+      <label for="uname"></label>
+      <input type="text" placeholder="Enter Email or Phone Number" name="uname" required>
+  
+      <label for="psw"></label>
+      <input type="password" placeholder="Enter your password" name="psw" required>
+
+      <label for="psw"></label>
+      <input type="password" placeholder="Confirm password" name="psw" required>
+  
+      <button type="submit" class="loginbtn">Sign-Up</button>
+    </div>
+  
+    <div class="container">
+      <span class="psw">Already have an account? <a style="color: #23859B" href="#">Sign IN</a></span>
+    </div>
+  </form> 
+  <script src="script.js"></script>
+</body>
+</html>
