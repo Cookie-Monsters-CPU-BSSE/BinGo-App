@@ -35,7 +35,7 @@ input:focus {
   top: calc(50% - 43px/2 + 166.5px);
   left: 50%;
   transform: translateX(-50%);
-  margin: 10px auto;
+  margin: 20px auto;
   text-align: center;
   
   background: #7FC805;
