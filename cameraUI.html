@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy@1.0.5/dist/webcam-easy.min.js"></script>
+    <link rel="stylesheet" href="camerastyle.css">
+  </head>
+  <body style="background-color:#D9EBB4;">
+    <div class="imgcontainer">
+      <img src="images/miniLogo.svg" alt="logo" class="logo">
+    </div>
+    <video id="webCam" autoplay playsinline width="300" height="400"></video>
+    <canvas id="canvas"></canvas>
+    <a download onclick="takePhoto()">SNAP</a>
+
+    <script>
+      const webCamElement = document.getElementById("webCam");
+      const canvasElement = document.getElementById("canvas");
+      const constraints = {
+        video: {
+          facingMode: "user",
+          aspectRatio: { ideal: 3/4 }
+        }
+      };
+      const theWebCam = new Webcam(webCamElement, "user", canvasElement);
+      
+      theWebCam.start();
+
+      function takePhoto() {
+        let picture = theWebCam.snap();
+        document.querySelector("a").href = picture;
+      }
+    </script>
+  </body>
+</html>

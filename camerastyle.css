@@ -1,0 +1,24 @@
+a {
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+}
+
+canvas {
+  display: none;
+}
+
+#webCam {
+  display: flex;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
