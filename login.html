@@ -16,7 +16,7 @@
   
 </head>
 <body style="background-color:#D9EBB4;"> 
-  <form action="action_page.php" method="post">
+  <form action="#" method="post">
     <div class="imgcontainer">
       <img src="images/LOGO.svg" alt="Avatar" class="avatar">
     </div>
@@ -26,10 +26,10 @@
   
     <div class="container">
       <label for="uname"></label>
-      <input type="text" placeholder="Enter Email or Phone Number" name="uname" required>
+      <input type="text" placeholder="Enter Email or Phone Number" name="uname" required oninvalid="this.setCustomValidity('Please enter a valid email or phone number')" oninput="this.setCustomValidity('')">
   
       <label for="psw"></label>
-      <input type="password" placeholder="Enter your password" name="psw" required>
+      <input type="password" placeholder="Enter your password" name="psw" required oninvalid="this.setCustomValidity('Password is required')" oninput="this.setCustomValidity('')">
   
       <button type="submit" class="loginbtn">Log In</button>
     </div>
@@ -38,6 +38,5 @@
       <span class="psw">Don't have an account? <a style="color: #23859B" href="signup.html">Sign UP</a></span>
     </div>
   </form> 
-  <script src="script.js"></script>
 </body>
 </html>
