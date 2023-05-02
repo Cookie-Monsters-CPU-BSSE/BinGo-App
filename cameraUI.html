@@ -4,33 +4,37 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
-    <script type="text/javascript" src="https://unpkg.com/webcam-easy@1.0.5/dist/webcam-easy.min.js"></script>
-    <link rel="stylesheet" href="camerastyle.css">
+    <script src="webcam.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body style="background-color:#D9EBB4;">
     <div class="imgcontainer">
       <img src="images/miniLogo.svg" alt="logo" class="logo">
     </div>
-    <video id="webCam" autoplay playsinline width="300" height="400"></video>
+    <div class="video-container">
+      <video id="webCam" autoplay playsinline></video>
+    </div>
     <canvas id="canvas"></canvas>
-    <a download onclick="takePhoto()">SNAP</a>
-
+    <div class="shuttercontainer">
+      <a download onclick="takePhoto()" class="shutterbtn" id="shutterButton">
+        <img src="/images/Shutter button.svg" alt="Button Image">
+      </a>
+    </div>
     <script>
       const webCamElement = document.getElementById("webCam");
       const canvasElement = document.getElementById("canvas");
-      const constraints = {
-        video: {
-          facingMode: "user",
-          aspectRatio: { ideal: 3/4 }
-        }
-      };
       const theWebCam = new Webcam(webCamElement, "user", canvasElement);
+      const shutterButton = document.getElementById("shutterButton");
       
       theWebCam.start();
 
       function takePhoto() {
         let picture = theWebCam.snap();
         document.querySelector("a").href = picture;
+        shutterButton.classList.add("clicked");
+        setTimeout(() => {
+          shutterButton.classList.remove("clicked");
+        }, 500);
       }
     </script>
   </body>
