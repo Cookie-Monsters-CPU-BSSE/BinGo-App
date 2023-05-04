@@ -35,7 +35,7 @@ input:focus {
   top: calc(50% - 43px/2 + 166.5px);
   left: 50%;
   transform: translateX(-50%);
-  margin: 10px auto;
+  margin: 20px auto;
   text-align: center;
   
   background: #7FC805;
@@ -49,7 +49,7 @@ button:hover {
 
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 0 0;
+  margin: 20px 0px 20px 0px;
 }
 
 img.avatar {
@@ -65,6 +65,83 @@ span.psw {
   display: block;
   text-align: center;
   padding-top: 0px;
+}
+
+.bottom-container {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.logocontainer {
+  position: relative;
+  margin: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+
+/* CAMERA  */
+a {
+  display: block;
+}
+
+canvas {
+  display: none;
+}
+
+.video-container {
+  margin: 0 auto;
+  max-width: 85%;
+  max-height: 65%;
+  aspect-ratio: 9 / 16;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 0;
+}
+
+#webCam {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.imgcontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.shuttercontainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.shutterbtn {
+  width: 77px;
+  height: 77px;
+  margin: 0 auto;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.shutterbtn.clicked {
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 600px) {
