@@ -4,13 +4,12 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
-    <script src="webcam.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
   </head>
   <body style="background-color:#D9EBB4;">
-    <div class="imgcontainer">
-      <img src="images/miniLogo.svg" alt="logo" class="logo">
-    </div>
+    <div class="overlay"></div>
+
     <div class="video-container">
       <video id="webCam" autoplay playsinline></video>
     </div>
@@ -20,6 +19,32 @@
         <img src="/images/Shutter button.svg" alt="Button Image">
       </a>
     </div>
+
+    <nav>
+      <div class="openMenu">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="mainMenu">
+        <li><img src="images/gg_profile.svg"></img><a href="#">Profile</a></li>
+        <li><img src="images/bnw-gocoins.svg"></img><a href="#">GoCoins</a></li>
+        <li><img src="images/settings.svg"></img><a href="#">Settinga</a></li>
+        <li><img src="images/logout.svg"></img><a href="login.html">Log-Out</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+        <span class="icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-github"></i>
+        </span>
+      </ul>
+      <img src="images/REALLogo.svg" alt="logo" class="logo">
+      <div class="openMenu" style="visibility: hidden">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+
+    <script src="webcam.js"></script>
+    <script src="burgermenu.js"></script>
     <script>
       const webCamElement = document.getElementById("webCam");
       const canvasElement = document.getElementById("canvas");
