@@ -64,18 +64,16 @@ img.avatar {
 
 span.psw {
   font-size: 13px;
-  display: block;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  padding-top: 0px;
 }
 
 .bottom-container {
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: -20px;
   width: 100%;
 }
 
@@ -100,7 +98,7 @@ canvas {
   margin: 0 auto;
   max-width: 85%;
   max-height: 65%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 16/9;
   position: absolute;
   top: 100px;
   right: 0;
@@ -150,16 +148,44 @@ nav {
 }
 
 nav .mainMenu {
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  margin-top: 0px;
+  top: 0px;
+  right: 0px;
+  left: -100%;
+  z-index: 11;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #D9EBB4;
+  transition: left 1s ease 0s;
   display: flex;
   list-style: none;
+  row-gap: 1rem;
+}
+
+nav .mainMenu li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .mainMenu li img {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  padding: 10px;
 }
 
 nav .mainMenu li a {
-  display: inline-block;
-  padding: 15px;
+  display: flex;
+  padding: 10px;
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-size: 28px;
+  font-size: 23px;
   transition: 0.2s ease;
 }
 
@@ -177,22 +203,6 @@ nav .mainMenu .closeMenu,
   cursor: pointer;
 }
 
-nav .mainMenu {
-  height: 100vh;
-  width: 70vw;
-  position: fixed;
-  margin-top: 0px;
-  top: 0px;
-  right: 0px;
-  left: -100%;
-  z-index: 11;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background: #D9EBB4;
-  transition: left 1s ease 0s;
-  display: flex;
-}
 
 nav .mainMenu .closeMenu {
   display: block;
@@ -229,6 +239,17 @@ nav .mainMenu .icons i {
 
 
 @media screen and (max-width: 800px) {
+  .video-container {
+    margin: 0 auto;
+    max-width: 85%;
+    max-height: 65%;
+    aspect-ratio: 9/16;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+  }
+
   img.avatar {
     width: 60%;
   }
