@@ -15,15 +15,15 @@
   </style>
   
 </head>
-<body style="background-color:#D9EBB4;"> 
-  <form action="cameraUI.html" method="post">
-    <div class="logocontainer">
-      <img src="images/LOGO.svg" alt="Avatar" class="avatar">
-    </div>
+<body style="background-color:#D9EBB4;">
+  <div class="logocontainer">
+    <img src="images/LOGO.svg" alt="Avatar" class="avatar">
+  </div>
 
-    <p class="introWelcome">Welcome back!</p>
-    <p class="intro">Please enter your details below</p>
-  
+  <p class="introWelcome">Welcome back!</p>
+  <p class="intro">Please enter your details below</p>
+
+  <form action="cameraUI.html" method="post">
     <div class="container">
       <label for="uname"></label>
       <input type="text" placeholder="Enter Email or Phone Number" name="uname" required oninvalid="this.setCustomValidity('Please enter a valid email or phone number')" oninput="this.setCustomValidity('')">
@@ -33,10 +33,10 @@
   
       <button type="submit" class="loginbtn">Log In</button>
     </div>
-  
-    <div class="bottom-container">
-      <span class="psw">Don't have an account? <a style="color: #23859B" href="signup.html">Sign UP</a></span>
-    </div>
-  </form> 
+  </form>
+
+  <div class="bottom-container">
+    <span class="psw">Don't have an account? <a style="color: #23859B; text-decoration: none;" href="signup.html">Sign UP</a></span>
+  </div>
 </body>
 </html>
