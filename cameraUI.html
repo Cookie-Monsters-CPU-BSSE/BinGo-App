@@ -4,6 +4,8 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.7.1/dist/ml5.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
     <style>
@@ -17,15 +19,25 @@
   <body style="background-color:#D9EBB4;">
     <div class="overlay"></div>
 
-    <div class="video-container">
+    <p>
+      <!-- <button id="toggleVideoEl" onclick="toggleVideo()">Hide Video</button> -->
+      <!-- <button id="toggleDetectingEl" onclick="toggleDetecting()">Start Detecting</button> -->
+      <div class="shuttercontainer">
+        <a onclick="toggleDetecting()" class="shutterbtn" id="toggleDetectingEl">
+          <img src="images/Shutter-button.svg">
+        </a>
+      </div>
+    </p>
+    
+    <!-- <div class="video-container">
       <video id="webCam" autoplay playsinline></video>
-    </div>
-    <canvas id="canvas"></canvas>
+    </div> -->
+    <!-- <canvas id="canvas" width="640" height="480"></canvas>
     <div class="shuttercontainer">
       <a download onclick="takePhoto()" class="shutterbtn" id="shutterButton">
         <img src="images/Shutter-button.svg" alt="Button Image">
       </a>
-    </div>
+    </div> -->
 
     <nav>
       <div class="openMenu">
@@ -50,24 +62,7 @@
       </div>
     </nav>
     
-    <script src="webcam.js"></script>
+    <script src="objDetection.js"></script>
     <script src="burgermenu.js"></script>
-    <script>
-      const webCamElement = document.getElementById("webCam");
-      const canvasElement = document.getElementById("canvas");
-      const theWebCam = new Webcam(webCamElement, "user", canvasElement);
-      const shutterButton = document.getElementById("shutterButton");
-      
-      theWebCam.start();
-
-      function takePhoto() {
-        let picture = theWebCam.snap();
-        document.querySelector("a").href = picture;
-        shutterButton.classList.add("clicked");
-        setTimeout(() => {
-          shutterButton.classList.remove("clicked");
-        }, 500);
-      }
-    </script>
   </body>
 </html>
