@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    
+      html {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body style="background-color:#D9EBB4;">
+    <div class="overlay"></div>
+    <nav>
+      <div class="openMenu">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="mainMenu">
+        <li class="chosentab"><img src="images/gg_profile.svg"></img><a href="#">Profile</a></li>
+        <li><img src="images/bnw-gocoins.svg"></img><a href="gocoins.html">GoCoins</a></li>
+        <li><img src="images/settings.svg"></img><a href="#">Settings</a></li>
+        <li><img src="images/logout.svg"></img><a href="login.html">Log-Out</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+        <span class="icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-github"></i>
+        </span>
+      </ul>
+      <img src="images/REALLogo.svg" alt="logo" class="logo">
+      <div>
+        <a href="cameraUI.html">
+          <img src="images/camera-icon.png" style="width: 45px;">
+        </a>    
+      </div>
+    </nav>
+    
+    <div class="avatarcontainer">
+      <img src="images/anon-profilepic.png" class="avatarprof">
+      <p class="usergeninfo">
+        <span class="userprofname">Test Name</span>
+        <span class="useremail">testemail@example.com</span>
+      </p>
+    </div>
+    <hr>
+    <div class="profinfocontainer">
+      <div class="gocoinsprof">
+        <p>
+          <img src="images/GoCoins-icon.png"  style="width: 40px;">
+          Current GoCoins: <span style="color: blue;">50,000</span>
+        </p>
+      </div>
+      <div class="couponsprof">
+        <p>
+          <img src="images/coupons-icon.png"  style="width: 40px;">
+          Redeemed Coupons:
+        </p>
+        <div class="collectedcoupons">
+          <ul>
+            <li><img src="images/chowking.png">
+              <div class="coupondesc">
+                <span style="font-weight: bold;">Chowking 5% Discount (Any order)</span>
+                <span style="font-size: 11px;">Redeemed 2 hours ago</span>
+              </div>
+            </li>
+            <li><img src="images/jollibee.png">
+              <div class="coupondesc">
+                <span style="font-weight: bold;">Jollibee FREE Yum Burger</span>
+                <span style="font-size: 11px;">Redeemed 2 hours ago</span>
+              </div>
+            </li>
+            <li><img src="images/jollibee.png">
+              <div class="coupondesc">
+                <span style="font-weight: bold;">Jollibee 10% Combo Meal Discount</span>
+                <span style="font-size: 11px;">Redeemed 1 day ago</span>
+              </div>
+            </li>
+            <li><img src="images/kfc.png">
+              <div class="coupondesc">
+                <span style="font-weight: bold;">KFC 50% Burger Discount</span>
+                <span style="font-size: 11px;">Redeemed 3 days ago</span>
+              </div>
+            </li>
+          </ul>          
+        </div>
+      </div>
+    </div>
+    <script src="burgermenu.js"></script>
+    <script>
+    </script>
+  </body>
+</html>

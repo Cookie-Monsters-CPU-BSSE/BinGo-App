@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      html {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body style="background-color: #d9ebb4; margin: 25px 0 25px 0">
+    <div class="results-main-body" style="background-color: white">
+      <div class="header">
+        <nav>
+          <div class="openMenu">
+            <i class="fa fa-bars"></i>
+          </div>
+          <ul class="mainMenu">
+            <li><img src="images/gg_profile.svg" /><a href="profile.html">Profile</a></li>
+            <li><img src="images/bnw-gocoins.svg" /><a href="gocoins.html">GoCoins</a></li>
+            <li><img src="images/settings.svg" /><a href="#">Settings</a></li>
+            <li>
+              <img src="images/logout.svg" /><a href="login.html">Log-Out</a>
+            </li>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            <span class="icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-github"></i>
+            </span>
+          </ul>
+          <img src="images/REALLogo.svg" alt="logo" class="logo" />
+          <div class="openMenu" style="visibility: hidden">
+            <i class="fa fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+      <div class="results-main">
+        <div class="scanned-imgcontainer">
+          <div class="scanned-img">Scanned Object</div>
+        </div>
+        <div class="results">
+          <p class="result-category">RECYCLABLE</p>
+          <p class="result-material">Plastic</p>
+        </div>
+      </div>
+
+      <div class="separator">
+        <img class="dashed-lines-png" src="images/Vector 5.png" />
+      </div>
+
+      <div class="gocoins-section">
+        <div class="gocoins">
+          <img
+            class="gocoins-icon"
+            src="images/GoCoins-icon.png"
+            alt="GoCoins"
+          />
+        </div>
+        <div class="gocoins-text">
+          <p>+10 GoCoins</p>
+        </div>
+      </div>
+
+      <div class="check-gocoins-section">
+        <a href="gocoins.html">
+          <div><p class="check-gocoins">Check GoCoins</p></div>
+          <div class="arrow-div">
+            <button class="check-gocoins-button">
+              <img class="check-gocoins-arrow" src="images/Arrow 1.png" />
+            </button>
+          </div>
+        </a>
+      </div>
+
+      <div class="rescan-section">
+        <a href="cameraUI.html">
+          <button class="rescan-button">
+            <img
+              class="rescan-icon"
+              src="images/arrow-arrows-relode-retry-tryagain-920 1.png"
+              alt="rescan"
+            />
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <script src="burgermenu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>BinGo Sign-Up</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  
+    html {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  
+</head>
+<body style="background-color:#D9EBB4;"> 
+  <div class="logocontainer">
+    <img src="images/LOGO.svg" alt="Avatar" class="avatar">
+  </div>
+
+  <p class="introWelcome">Welcome!</p>
+  <p class="intro">Please enter your details below</p>
+
+  <form action="cameraUI.html" method="post" onsubmit="return checkPasswords()">  
+    <div class="container">
+      <label for="email"></label>
+      <input type="text" placeholder="Enter Email or Phone Number" name="email" required oninvalid="this.setCustomValidity('Please enter a valid email or phone number')" oninput="this.setCustomValidity('')">
+  
+      <label for="psw"></label>
+      <input type="password" placeholder="Enter your password" name="psw" id="password1" required oninvalid="this.setCustomValidity('Password is required')" oninput="this.setCustomValidity('')">
+
+      <label for="confirm-psw"></label>
+      <input type="password" placeholder="Confirm password" name="confirm-psw" id="password2" required oninvalid="this.setCustomValidity('Please confirm your password')" oninput="this.setCustomValidity('')">
+  
+      <button type="submit" class="loginbtn">Sign-Up</button>
+    </div>
+  </form>
+
+  <div class="bottom-container">
+    <span class="psw">Already have an account? <a style="color: #23859B; text-decoration: none;" href="login.html">Sign IN</a></span>
+  </div>
+
+  <script src="userclass.js"></script>
+  <script>
+    let form = document.querySelector('form');
+    // Retrieve the current user counter from local storage (0 if none)
+    let userCounter = parseInt(localStorage.getItem('userCounter')) || 0;
+
+    form.addEventListener('submit', (event) => {
+      let email = event.target.elements.email.value;
+      let password = event.target.elements.psw.value;
+    
+      let user = new User(email, password);
+    
+      // Store the user object in local storage with a unique key
+      localStorage.setItem(`user${userCounter}`, JSON.stringify(user));
+    
+      userCounter++; // Increment the counter for the next user
+      localStorage.setItem('userCounter', userCounter);
+    });
+    
+
+    function checkPasswords() {
+    let password1 = document.getElementById("password1").value;
+    let password2 = document.getElementById("password2").value;
+    if (password1 !== password2) {
+      alert("Passwords do not match");
+      return false;
+    }
+    return true;
+    }
+  </script>
+</body>
+</html>
