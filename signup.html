@@ -23,7 +23,7 @@
   <p class="introWelcome">Welcome!</p>
   <p class="intro">Please enter your details below</p>
 
-  <form action="cameraUI.html" method="post" onsubmit="return checkPasswords()">  
+  <form action="cameraUI.html" method="post" onsubmit="return checkPasswords()" data-netlify="true">  
     <div class="container">
       <label for="email"></label>
       <input type="text" placeholder="Enter Email or Phone Number" name="email" required oninvalid="this.setCustomValidity('Please enter a valid email or phone number')" oninput="this.setCustomValidity('')">
@@ -39,7 +39,7 @@
   </form>
 
   <div class="bottom-container">
-    <span class="psw">Already have an account? <a style="color: #23859B; text-decoration: none;" href="login.html">Sign IN</a></span>
+    <span class="psw">Already have an account? <a style="color: #23859B; text-decoration: none;" href="index.html">Sign IN</a></span>
   </div>
 
   <script src="userclass.js"></script>
