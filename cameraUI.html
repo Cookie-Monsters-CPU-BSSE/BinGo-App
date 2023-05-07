@@ -23,7 +23,7 @@
       <!-- <button id="toggleVideoEl" onclick="toggleVideo()">Hide Video</button> -->
       <!-- <button id="toggleDetectingEl" onclick="toggleDetecting()">Start Detecting</button> -->
       <div class="shuttercontainer">
-        <a onclick="toggleDetecting()" class="shutterbtn" id="toggleDetectingEl">
+        <a onclick="toggleDetecting(); shutterPress()" class="shutterbtn" id="toggleDetectingEl">
           <img src="images/Shutter-button.svg">
         </a>
       </div>
@@ -44,8 +44,8 @@
         <i class="fa fa-bars"></i>
       </div>
       <ul class="mainMenu">
-        <li><img src="images/gg_profile.svg"></img><a href="#">Profile</a></li>
-        <li><img src="images/bnw-gocoins.svg"></img><a href="#">GoCoins</a></li>
+        <li><img src="images/gg_profile.svg"></img><a href="profile.html">Profile</a></li>
+        <li><img src="images/bnw-gocoins.svg"></img><a href="gocoins.html">GoCoins</a></li>
         <li><img src="images/settings.svg"></img><a href="#">Settings</a></li>
         <li><img src="images/logout.svg"></img><a href="login.html">Log-Out</a></li>
         <div class="closeMenu"><i class="fa fa-times"></i></div>
@@ -64,5 +64,15 @@
     
     <script src="objDetection.js"></script>
     <script src="burgermenu.js"></script>
+    <script>
+      const shutterButton = document.getElementById("toggleDetectingEl");
+      
+      function shutterPress() {
+        shutterButton.classList.add("clicked");
+        setTimeout(() => {
+          shutterButton.classList.remove("clicked");
+        }, 300);
+      }
+    </script>
   </body>
 </html>
