@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    
+      html {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body style="background-color:#D9EBB4;">
+    <div class="overlay"></div>
+
+    <div class="video-container">
+      <video id="webCam" autoplay playsinline></video>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="shuttercontainer">
+      <a download onclick="takePhoto()" class="shutterbtn" id="shutterButton">
+        <img src="/images/Shutter button.svg" alt="Button Image">
+      </a>
+    </div>
+
+    <nav>
+      <div class="openMenu">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="mainMenu">
+        <li><img src="images/gg_profile.svg"></img><a href="#">Profile</a></li>
+        <li><img src="images/bnw-gocoins.svg"></img><a href="#">GoCoins</a></li>
+        <li><img src="images/settings.svg"></img><a href="#">Settings</a></li>
+        <li><img src="images/logout.svg"></img><a href="login.html">Log-Out</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+        <span class="icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-github"></i>
+        </span>
+      </ul>
+      <img src="images/REALLogo.svg" alt="logo" class="logo">
+      <div class="openMenu" style="visibility: hidden">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+    
+    <script src="webcam.js"></script>
+    <script src="burgermenu.js"></script>
+    <script>
+      const webCamElement = document.getElementById("webCam");
+      const canvasElement = document.getElementById("canvas");
+      const theWebCam = new Webcam(webCamElement, "user", canvasElement);
+      const shutterButton = document.getElementById("shutterButton");
+      
+      theWebCam.start();
+
+      function takePhoto() {
+        let picture = theWebCam.snap();
+        document.querySelector("a").href = picture;
+        shutterButton.classList.add("clicked");
+        setTimeout(() => {
+          shutterButton.classList.remove("clicked");
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

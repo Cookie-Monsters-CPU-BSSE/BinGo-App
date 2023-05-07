@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>BinGo Log In</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  
+    html {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  
+</head>
+<body style="background-color:#D9EBB4;">
+  <div class="logocontainer">
+    <img src="images/LOGO.svg" alt="Avatar" class="avatar">
+  </div>
+
+  <p class="introWelcome">Welcome back!</p>
+  <p class="intro">Please enter your details below</p>
+
+  <form action="cameraUI.html" method="post">
+    <div class="container">
+      <label for="uname"></label>
+      <input type="text" placeholder="Enter Email or Phone Number" name="uname" required oninvalid="this.setCustomValidity('Please enter a valid email or phone number')" oninput="this.setCustomValidity('')">
+  
+      <label for="psw"></label>
+      <input type="password" placeholder="Enter your password" name="psw" required oninvalid="this.setCustomValidity('Password is required')" oninput="this.setCustomValidity('')">
+  
+      <button type="submit" class="loginbtn">Log In</button>
+    </div>
+  </form>
+
+  <div class="bottom-container">
+    <span class="psw">Don't have an account? <a style="color: #23859B; text-decoration: none;" href="signup.html">Sign UP</a></span>
+  </div>
+</body>
+</html>
