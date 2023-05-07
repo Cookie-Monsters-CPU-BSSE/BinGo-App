@@ -90,7 +90,7 @@ class Webcam {
       e.scale(-1, 1)), 
       e.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height), 
       e.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height), 
-      this._canvasElement.toDataURL("image/jpeg") 
+      this._canvasElement.toDataURL("image/png") 
     } 
     
     throw "canvas element is missing" 
