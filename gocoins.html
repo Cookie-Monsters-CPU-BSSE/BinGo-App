@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoCoins</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      html {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body style="background-color: #d9ebb4; margin: 30px 0 30px 0">
+    <div class="gocoins-main">
+      <div class="gocoins-header">
+        <div class="burger-menu">
+          <nav>
+            <div class="openMenu">
+              <i class="fa fa-bars"></i>
+            </div>
+            <ul class="mainMenu">
+              <li>
+                <img src="images/gg_profile.svg" /><a href="#">Profile</a>
+              </li>
+              <li>
+                <img src="images/bnw-gocoins.svg" /><a href="#">GoCoins</a>
+              </li>
+              <li><img src="images/settings.svg" /><a href="#">Settings</a></li>
+              <li>
+                <img src="images/logout.svg" /><a href="login.html">Log-Out</a>
+              </li>
+              <div class="closeMenu"><i class="fa fa-times"></i></div>
+              <span class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+              </span>
+            </ul>
+            <div class="openMenu" style="visibility: hidden">
+              <i class="fa fa-bars"></i>
+            </div>
+          </nav>
+        </div>
+
+        <div class="logo">
+          <img
+            src="images/REALLogo.svg"
+            alt="logo"
+            class="logo"
+            style="width: 200px"
+          />
+        </div>
+
+        <div class="camera">
+          <button class="camera-button">
+            <img
+              class="camera-icon"
+              src="images/camera-icon.png"
+              alt="camera"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="gocoins">
+        <img class="gocoins-icon" src="images/coins-vector.png" alt="GoCoins" />
+        <div>
+          <p class="gocoins-wallet-text" style="color: #00c1ec">50,000</p>
+        </div>
+        <div>
+          <p class="gocoins-wallet-text">GoCoins</p>
+        </div>
+      </div>
+
+      <div class="missions">
+        <img src="images/missions-icon.png" style="width: 25px; height: 25px" />
+        <p class="missions-coupons-text">Missions</p>
+      </div>
+
+      <div class="underline">
+        <img src="images/Vector 10.png" style="width: 170px" />
+      </div>
+
+      <div class="mission-list">
+        <div>
+          <p class="mission-text" style="margin-left: 20px">
+            Scan 3 recyclable items today
+          </p>
+        </div>
+        <div style="text-align: end">
+          <p class="mission-text" style="font-weight: bold; margin-right: 10px">
+            +50 GoCoins
+          </p>
+        </div>
+      </div>
+
+      <div class="mission-list">
+        <div>
+          <p class="mission-text" style="margin-left: 20px">
+            Scan 3 biodegradable items today
+          </p>
+        </div>
+        <div style="text-align: end">
+          <p class="mission-text" style="font-weight: bold; margin-right: 10px">
+            +50 GoCoins
+          </p>
+        </div>
+      </div>
+
+      <div class="mission-list">
+        <div>
+          <p class="mission-text" style="margin-left: 20px">
+            Scan 3 non-biodegradable items today
+          </p>
+        </div>
+        <div style="text-align: end">
+          <p class="mission-text" style="font-weight: bold; margin-right: 10px">
+            +50 GoCoins
+          </p>
+        </div>
+      </div>
+
+      <div class="missions" style="align-items: center">
+        <img src="images/coupons-icon.png" style="width: 25px; height: 25px" />
+        <p class="missions-coupons-text">Coupons</p>
+      </div>
+
+      <div class="underline" style="margin-top: -25px">
+        <img src="images/Vector 10.png" style="width: 170px" />
+      </div>
+
+      <div class="coupons-list">
+        <div class="coupon-name">
+          <img
+            src="images/kfc.png"
+            style="width: 35px; height: 35px; margin-left: 5px"
+          />
+          <div>
+            <p class="coupons-text" style="margin-left: 5px">
+              KFC 15% Discount (Minimum Php150)
+            </p>
+          </div>
+        </div>
+
+        <div class="redeem">
+          <button class="redeem-button">
+            <p class="coupons-text" style="text-align: end">Redeem</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="coupons-list">
+        <div class="coupon-name">
+          <img
+            src="images/jollibee.png"
+            style="width: 35px; height: 35px; margin-left: 5px"
+          />
+          <div>
+            <p class="coupons-text" style="margin-left: 5px">
+              Jollibee 5% Discount (Any order)
+            </p>
+          </div>
+        </div>
+
+        <div class="redeem">
+          <button class="redeem-button">
+            <p class="coupons-text" style="text-align: end">Redeem</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="coupons-list">
+        <div class="coupon-name">
+          <img
+            src="images/mcdo.png"
+            style="width: 35px; height: 35px; margin-left: 5px"
+          />
+          <div>
+            <p class="coupons-text" style="margin-left: 5px">
+              McDonald's FREE McFlurry
+            </p>
+          </div>
+        </div>
+
+        <div class="redeem">
+          <button class="redeem-button">
+            <p class="coupons-text" style="text-align: end">Redeem</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="burgermenu.js"></script>
+  </body>
+</html>
