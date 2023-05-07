@@ -35,6 +35,7 @@ function setup() {
     if (video.elt.readyState >= 2) {
       document.body.style.cursor = 'default';
       console.log('video element is ready! Click "Start Detecting" to see the magic!');
+      alert('Camera is ready! Click the shutter!')
     }
   });
   video.hide();
