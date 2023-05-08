@@ -60,14 +60,9 @@ function flipCamera() {
     }
   };
 
-  // Remove the existing video capture element
-  video.remove();
-
-  // Create a new video capture element with the updated constraints
-  video = createCapture(constraints);
-  video.class("webCam");
-  video.size(640, 480);
-  console.log('video element is created');
+  capture.remove(); // Remove the existing capture element
+  capture = createCapture(constraints); // Create a new capture element
+  capture.hide();
 
   // Restart object detection if currently detecting
   if (detecting) {
