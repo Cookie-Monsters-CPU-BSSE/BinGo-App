@@ -26,16 +26,22 @@ function setup() {
   // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
   // The element is separate from the canvas and is displayed by default.
   
-  video = createCapture(VIDEO);
-  video.class("webCam")
+  video = createCapture({
+    video: {
+      facingMode: { exact: "environment" },
+    },
+  });
+  video.class("webCam");
   video.size(640, 480);
-  console.log('video element is created');
-  video.elt.addEventListener('loadeddata', function() {
+  console.log("video element is created");
+  video.elt.addEventListener("loadeddata", function () {
     // set cursor back to default
     if (video.elt.readyState >= 2) {
-      document.body.style.cursor = 'default';
-      console.log('video element is ready! Click "Start Detecting" to see the magic!');
-      alert('Camera is ready! Click the shutter!')
+      document.body.style.cursor = "default";
+      console.log(
+        'video element is ready! Click "Start Detecting" to see the magic!'
+      );
+      alert("Camera is ready! Click the shutter!");
     }
   });
   video.hide();
