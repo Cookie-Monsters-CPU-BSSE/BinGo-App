@@ -73,6 +73,14 @@
           shutterButton.classList.remove("clicked");
         }, 300);
       }
+
+      window.onload = function() {
+        // Get the canvas element by its ID
+        let canvas = document.getElementById("defaultCanvas0");
+
+        canvas.setAttribute("width", 1280);
+        canvas.setAttribute("height", 720);
+      };
     </script>
   </body>
 </html>
