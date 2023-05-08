@@ -75,20 +75,6 @@
           shutterButton.classList.remove("clicked");
         }, 300);
       }
-
-      const flipButton = document.getElementById("flipButton");
-      flipButton.addEventListener("click", function() {
-        if (video) {
-          // switch to front-facing camera if currently using rear camera
-          if (video.facingMode == "environment") {
-            video.facingMode = "user";
-          }
-          // switch to rear camera if currently using front-facing camera
-          else if (video.facingMode == "user") {
-            video.facingMode = "environment";
-          }
-        }
-      });
     </script>
   </body>
 </html>

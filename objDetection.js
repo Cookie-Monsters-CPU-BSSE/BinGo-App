@@ -40,10 +40,6 @@ function setup() {
   video.size(640, 480);
   console.log('video element is created');
 
-  video = createCapture(VIDEO);
-  video.class("webCam")
-  video.size(640, 480);
-  console.log('video element is created');
   video.elt.addEventListener('loadeddata', function() {
     // set cursor back to default
     if (video.elt.readyState >= 2) {
