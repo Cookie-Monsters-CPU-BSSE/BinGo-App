@@ -19,34 +19,32 @@ function preload() {
   console.log("detector object is loaded");
 }
 
-const constraints = {
-  video: {
-    facingMode: { exact: "environment" },
-  },
-};
-
+// The setup() function is called once when the program starts.
 function setup() {
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then((stream) => {
-      video = createCapture(stream);
-      video.class("webCam");
-      video.size(640, 480);
-      console.log("video element is created");
-      video.elt.addEventListener("loadeddata", function () {
-        if (video.elt.readyState >= 2) {
-          document.body.style.cursor = "default";
-          console.log(
-            'video element is ready! Click "Start Detecting" to see the magic!'
-          );
-          alert("Camera is ready! Click the shutter!");
-        }
-      });
-      video.hide();
-    })
-    .catch((error) => {
-      console.error("Error accessing the rear camera:", error);
-    });
+  // create canvas element with 640 width and 480 height in pixel
+  createCanvas(640, 480);
+  // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
+  // The element is separate from the canvas and is displayed by default.
+
+  video = createCapture({
+    video: {
+      facingMode: { exact: "environment" },
+    },
+  });
+  video.class("webCam");
+  video.size(640, 480);
+  console.log("video element is created");
+  video.elt.addEventListener("loadeddata", function () {
+    // set cursor back to default
+    if (video.elt.readyState >= 2) {
+      document.body.style.cursor = "default";
+      console.log(
+        'video element is ready! Click "Start Detecting" to see the magic!'
+      );
+      alert("Camera is ready! Click the shutter!");
+    }
+  });
+  video.hide();
 }
 
 // the draw() function continuously executes until the noLoop() function is called
