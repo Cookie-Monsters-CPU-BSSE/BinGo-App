@@ -6,47 +6,38 @@ let videoVisibility = true;
 let detecting = false;
 
 // global HTML element
-const toggleVideoEl = document.getElementById("toggleVideoEl");
-const toggleDetectingEl = document.getElementById("toggleDetectingEl");
+const toggleVideoEl = document.getElementById('toggleVideoEl');
+const toggleDetectingEl = document.getElementById('toggleDetectingEl');
 
 // set cursor to wait until video elment is loaded
-document.body.style.cursor = "wait";
+document.body.style.cursor = 'wait';
 
 // The preload() function if existed is called before the setup() function
 function preload() {
   // create detector object from "cocossd" model
-  detector = ml5.objectDetector("cocossd");
-  console.log("detector object is loaded");
+  detector = ml5.objectDetector('cocossd');
+  console.log('detector object is loaded');
 }
 
-const constraints = {
-  video: {
-    facingMode: { exact: "environment" },
-  },
-};
-
+// The setup() function is called once when the program starts.
 function setup() {
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then((stream) => {
-      video = createCapture(stream);
-      video.class("webCam");
-      video.size(640, 480);
-      console.log("video element is created");
-      video.elt.addEventListener("loadeddata", function () {
-        if (video.elt.readyState >= 2) {
-          document.body.style.cursor = "default";
-          console.log(
-            'video element is ready! Click "Start Detecting" to see the magic!'
-          );
-          alert("Camera is ready! Click the shutter!");
-        }
-      });
-      video.hide();
-    })
-    .catch((error) => {
-      console.error("Error accessing the rear camera:", error);
-    });
+  // create canvas element with 640 width and 480 height in pixel
+  createCanvas(640, 480);
+  // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
+  // The element is separate from the canvas and is displayed by default.
+  
+  video = createCapture(VIDEO);
+  video.class("webCam")
+  video.size(640, 480);
+  console.log('video element is created');
+  video.elt.addEventListener('loadeddata', function() {
+    // set cursor back to default
+    if (video.elt.readyState >= 2) {
+      document.body.style.cursor = 'default';
+      console.log('video element is ready! Click "Start Detecting" to see the magic!');
+    }
+  });
+  video.hide();
 }
 
 // the draw() function continuously executes until the noLoop() function is called
@@ -79,7 +70,7 @@ function drawResult(object) {
 // draw bounding box around the detected object
 function drawBoundingBox(object) {
   // Sets the color used to draw lines.
-  stroke("green");
+  stroke('green');
   // width of the stroke
   strokeWeight(4);
   // Disables filling geometry
@@ -94,7 +85,7 @@ function drawLabel(object) {
   // Disables drawing the stroke
   noStroke();
   // sets the color used to fill shapes
-  fill("white");
+  fill('white');
   // set font size
   textSize(24);
   // draw string to canvas
@@ -109,7 +100,7 @@ function onDetected(error, results) {
   detections = results;
   // keep detecting object
   if (detecting) {
-    detect();
+    detect(); 
   }
 }
 
