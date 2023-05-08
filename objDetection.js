@@ -26,20 +26,18 @@ function setup() {
   createCanvas(640, 480);
   // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
   // The element is separate from the canvas and is displayed by default.
-  
+
   // Create the video constraints based on the initial camera selection
   var constraints = {
     video: {
       facingMode: useFrontCamera ? "user" : { exact: "environment" }
     }
   };
-
-  // Create the video capture element with the constraints
+  
   video = createCapture(constraints);
-  video.class("webCam");
+  video.class("webCam")
   video.size(640, 480);
   console.log('video element is created');
-
   video.elt.addEventListener('loadeddata', function() {
     // set cursor back to default
     if (video.elt.readyState >= 2) {
@@ -60,25 +58,21 @@ function flipCamera() {
     }
   };
 
-  capture.remove(); // Remove the existing capture element
-  capture = createCapture(constraints); // Create a new capture element
-  capture.hide();
+  // Remove the existing video capture element
+  video.remove();
+
+  // Create a new video capture element with the updated constraints
+  video = createCapture(constraints);
+  video.class("webCam");
+  video.size(640, 480);
+  console.log('video element is created');
 
   // Restart object detection if currently detecting
   if (detecting) {
     detect();
   }
-}
 
-// the draw() function continuously executes until the noLoop() function is called
-function draw() {
-  if (!video || !detecting) return;
-  // draw video frame to canvas and place it at the top-left corner
-  image(video, 0, 0);
-  // draw all detected objects to the canvas
-  for (let i = 0; i < detections.length; i++) {
-    drawResult(detections[i]);
-  }
+  video.hide();
 }
 
 /*
