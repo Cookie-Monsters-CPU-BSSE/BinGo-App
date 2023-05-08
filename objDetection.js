@@ -4,7 +4,6 @@ let detector = null; // detector object
 let detections = []; // store detection result
 let videoVisibility = true;
 let detecting = false;
-let useFrontCamera = false; // Flag to track the currently active camera
 
 // global HTML element
 const toggleVideoEl = document.getElementById('toggleVideoEl');
@@ -26,53 +25,37 @@ function setup() {
   createCanvas(640, 480);
   // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
   // The element is separate from the canvas and is displayed by default.
-
-  // Create the video constraints based on the initial camera selection
-  var constraints = {
-    video: {
-      facingMode: useFrontCamera ? "user" : { exact: "environment" }
-    }
-  };
   
-  video = createCapture(constraints);
-  video.class("webCam")
+  video = createCapture({
+    video: {
+      facingMode: { exact: "environment" },
+    },
+  });
+  video.class("webCam");
   video.size(640, 480);
-  console.log('video element is created');
-  video.elt.addEventListener('loadeddata', function() {
+  console.log("video element is created");
+  video.elt.addEventListener("loadeddata", function () {
     // set cursor back to default
     if (video.elt.readyState >= 2) {
-      document.body.style.cursor = 'default';
-      console.log('video element is ready! Click "Start Detecting" to see the magic!');
+      document.body.style.cursor = "default";
+      console.log(
+        'video element is ready! Click "Start Detecting" to see the magic!'
+      );
+      alert("Camera is ready! Click the shutter!");
     }
   });
   video.hide();
 }
 
-function flipCamera() {
-  useFrontCamera = !useFrontCamera; // Toggle the camera flag
-
-  // Update the video constraints based on the new camera selection
-  var constraints = {
-    video: {
-      facingMode: useFrontCamera ? "user" : { exact: "environment" }
-    }
-  };
-
-  // Remove the existing video capture element
-  video.remove();
-
-  // Create a new video capture element with the updated constraints
-  video = createCapture(constraints);
-  video.class("webCam");
-  video.size(640, 480);
-  console.log('video element is created');
-
-  // Restart object detection if currently detecting
-  if (detecting) {
-    detect();
+// the draw() function continuously executes until the noLoop() function is called
+function draw() {
+  if (!video || !detecting) return;
+  // draw video frame to canvas and place it at the top-left corner
+  image(video, 0, 0);
+  // draw all detected objects to the canvas
+  for (let i = 0; i < detections.length; i++) {
+    drawResult(detections[i]);
   }
-
-  video.hide();
 }
 
 /*
