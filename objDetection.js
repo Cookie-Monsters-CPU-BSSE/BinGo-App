@@ -4,6 +4,7 @@ let detector = null; // detector object
 let detections = []; // store detection result
 let videoVisibility = true;
 let detecting = false;
+let useFrontCamera = false; // Flag to track the currently active camera
 
 // global HTML element
 const toggleVideoEl = document.getElementById('toggleVideoEl');
@@ -26,6 +27,19 @@ function setup() {
   // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
   // The element is separate from the canvas and is displayed by default.
   
+  // Create the video constraints based on the initial camera selection
+  var constraints = {
+    video: {
+      facingMode: useFrontCamera ? "user" : { exact: "environment" }
+    }
+  };
+
+  // Create the video capture element with the constraints
+  video = createCapture(constraints);
+  video.class("webCam");
+  video.size(640, 480);
+  console.log('video element is created');
+
   video = createCapture(VIDEO);
   video.class("webCam")
   video.size(640, 480);
@@ -38,6 +52,31 @@ function setup() {
     }
   });
   video.hide();
+}
+
+function flipCamera() {
+  useFrontCamera = !useFrontCamera; // Toggle the camera flag
+
+  // Update the video constraints based on the new camera selection
+  var constraints = {
+    video: {
+      facingMode: useFrontCamera ? "user" : { exact: "environment" }
+    }
+  };
+
+  // Remove the existing video capture element
+  video.remove();
+
+  // Create a new video capture element with the updated constraints
+  video = createCapture(constraints);
+  video.class("webCam");
+  video.size(640, 480);
+  console.log('video element is created');
+
+  // Restart object detection if currently detecting
+  if (detecting) {
+    detect();
+  }
 }
 
 // the draw() function continuously executes until the noLoop() function is called
