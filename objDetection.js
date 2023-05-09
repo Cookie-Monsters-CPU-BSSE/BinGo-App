@@ -26,33 +26,20 @@ function setup() {
   // Creates a new HTML5 <video> element that contains the audio/video feed from a webcam.
   // The element is separate from the canvas and is displayed by default.
   
-  video = createCapture({
-  video: {
-    facingMode: { exact: "environment" },
-  },
-});
-video.class("webCam");
-video.hide();
-
-console.log("video element is created");
-video.elt.addEventListener("loadeddata", function () {
-  // set cursor back to default
-  if (video.elt.readyState >= 2) {
-    document.body.style.cursor = "default";
-    console.log(
-      'video element is ready! Click "Start Detecting" to see the magic!'
-    );
-    alert("Camera is ready! Click the shutter!");
-
-    // Calculate the appropriate height or width based on the original aspect ratio
-    let targetWidth = 640;
-    let aspectRatio = video.elt.videoWidth / video.elt.videoHeight;
-    let newHeight = targetWidth / aspectRatio;
-
-    // Apply the new size to the video element
-    video.size(targetWidth, newHeight);
-  }
-});
+  video = createCapture(VIDEO);
+  video.class("webCam")
+  video.size(640, 480);
+  console.log('video element is created');
+  video.elt.addEventListener('loadeddata', function() {
+    // set cursor back to default
+    if (video.elt.readyState >= 2) {
+      document.body.style.cursor = 'default';
+      console.log('video element is ready! Click "Start Detecting" to see the magic!');
+      alert('Camera is ready! Click the shutter!')
+    }
+  });
+  video.hide();
+}
 
 // the draw() function continuously executes until the noLoop() function is called
 function draw() {
